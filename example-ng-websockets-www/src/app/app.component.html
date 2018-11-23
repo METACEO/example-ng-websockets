@@ -1,0 +1,24 @@
+<section class="app-component"
+         fxFill
+         fxLayout="column"
+         fxLayoutAlign="start stretch">
+
+  <app-toolbar [title]="title"></app-toolbar>
+
+  <ng-container *ngIf="getAppClient$ | async; else AppSignIn">
+    <section class="app-angular-clients">
+      <app-angular-client *ngFor="let client of (selectAppClients$ | async)"
+                          [client]="client"
+                          (onAddCount)="doAddCount($event)"
+                          (onRemoveCount)="doRemoveCount($event)"></app-angular-client>
+    </section>
+  </ng-container>
+  <ng-template #AppSignIn>
+    <app-sign-in fxFlex
+                 [appId]="selectAppId$ | async"
+                 [appUserNumber]="selectAppUserNumber$ | async"
+                 [title]="title"
+                 (onSignIn)="onSignIn($event)"></app-sign-in>
+  </ng-template>
+
+</section>

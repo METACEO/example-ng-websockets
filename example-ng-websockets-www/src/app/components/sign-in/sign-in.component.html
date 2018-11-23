@@ -1,0 +1,41 @@
+
+<section fxFlex
+         fxFill
+         fxLayout="row"
+         fxLayoutAlign="center center">
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        Sign into {{title}}
+      </mat-card-title>
+      <mat-card-subtitle>
+        This is how others will see you within the <i>{{title}}</i> application.
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+
+      <div fxLayout="column" fxLayoutAlign="start stretch">
+
+        <mat-form-field>
+          <input matInput placeholder="Name" [formControl]="name" required/>
+          <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput disabled placeholder="User #" [value]="appUserNumber"/>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput disabled placeholder="Application Id" [value]="appId"/>
+        </mat-form-field>
+
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="doSignIn()">Sign In</button>
+    </mat-card-actions>
+  </mat-card>
+
+</section>

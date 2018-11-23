@@ -1,0 +1,23 @@
+<section class="app-angular-client">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>User {{client.userNumber}} ({{client.name}})</mat-card-title>
+      <mat-card-subtitle>{{client.id}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <section class="count"
+               fxLayout="row"
+               fxLayoutAlign="start center">
+        <div fxFlex>
+          Count: {{client.count}}
+        </div>
+        <button mat-mini-fab (click)="doRemoveCount()">
+          <mat-icon>remove</mat-icon>
+        </button>
+        <button mat-mini-fab (click)="doAddCount()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </section>
+    </mat-card-content>
+  </mat-card>
+</section>

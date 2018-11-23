@@ -1,0 +1,20 @@
+
+section.app-angular-client {
+  padding: 20px;
+  padding-bottom: 0;
+
+  button[mat-mini-fab] {
+    margin: 0;
+    margin-left: 20px;
+  }
+}
+
+.count {
+  width: 100%;
+}
+
+:host:last-of-type {
+  section.app-angular-client {
+    padding-bottom: 20px;
+  }
+}
